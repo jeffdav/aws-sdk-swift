@@ -32,6 +32,7 @@ import protocol ClientRuntime.DefaultClientConfiguration
 import protocol ClientRuntime.DefaultHttpClientConfiguration
 import protocol ClientRuntime.HttpInterceptorProvider
 import protocol ClientRuntime.IdempotencyTokenGenerator
+import protocol ClientRuntime.Interceptor
 import protocol ClientRuntime.InterceptorProvider
 import protocol ClientRuntime.TelemetryProvider
 import protocol Smithy.LogAgent
@@ -228,10 +229,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<AcknowledgeOrderReceiptInput, AcknowledgeOrderReceiptOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<AcknowledgeOrderReceiptInput, AcknowledgeOrderReceiptOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<AcknowledgeOrderReceiptInput, AcknowledgeOrderReceiptOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<AcknowledgeOrderReceiptInput, AcknowledgeOrderReceiptOutput>(AcknowledgeOrderReceiptInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<AcknowledgeOrderReceiptInput, AcknowledgeOrderReceiptOutput>())
@@ -299,10 +300,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ActivateDeviceIdentifierInput, ActivateDeviceIdentifierOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ActivateDeviceIdentifierInput, ActivateDeviceIdentifierOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ActivateDeviceIdentifierInput, ActivateDeviceIdentifierOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ActivateDeviceIdentifierInput, ActivateDeviceIdentifierOutput>(ActivateDeviceIdentifierInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ActivateDeviceIdentifierInput, ActivateDeviceIdentifierOutput>())
@@ -370,10 +371,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ActivateNetworkSiteInput, ActivateNetworkSiteOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ActivateNetworkSiteInput, ActivateNetworkSiteOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ActivateNetworkSiteInput, ActivateNetworkSiteOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ActivateNetworkSiteInput, ActivateNetworkSiteOutput>(ActivateNetworkSiteInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ActivateNetworkSiteInput, ActivateNetworkSiteOutput>())
@@ -441,10 +442,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ConfigureAccessPointInput, ConfigureAccessPointOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ConfigureAccessPointInput, ConfigureAccessPointOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ConfigureAccessPointInput, ConfigureAccessPointOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ConfigureAccessPointInput, ConfigureAccessPointOutput>(ConfigureAccessPointInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ConfigureAccessPointInput, ConfigureAccessPointOutput>())
@@ -512,10 +513,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateNetworkInput, CreateNetworkOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateNetworkInput, CreateNetworkOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateNetworkInput, CreateNetworkOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateNetworkInput, CreateNetworkOutput>(CreateNetworkInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateNetworkInput, CreateNetworkOutput>())
@@ -583,10 +584,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateNetworkSiteInput, CreateNetworkSiteOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateNetworkSiteInput, CreateNetworkSiteOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateNetworkSiteInput, CreateNetworkSiteOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateNetworkSiteInput, CreateNetworkSiteOutput>(CreateNetworkSiteInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateNetworkSiteInput, CreateNetworkSiteOutput>())
@@ -654,10 +655,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeactivateDeviceIdentifierInput, DeactivateDeviceIdentifierOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeactivateDeviceIdentifierInput, DeactivateDeviceIdentifierOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeactivateDeviceIdentifierInput, DeactivateDeviceIdentifierOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeactivateDeviceIdentifierInput, DeactivateDeviceIdentifierOutput>(DeactivateDeviceIdentifierInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeactivateDeviceIdentifierInput, DeactivateDeviceIdentifierOutput>())
@@ -726,10 +727,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteNetworkInput, DeleteNetworkOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteNetworkInput, DeleteNetworkOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteNetworkInput, DeleteNetworkOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteNetworkInput, DeleteNetworkOutput>(DeleteNetworkInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteNetworkInput, DeleteNetworkOutput>())
@@ -796,10 +797,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteNetworkSiteInput, DeleteNetworkSiteOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteNetworkSiteInput, DeleteNetworkSiteOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteNetworkSiteInput, DeleteNetworkSiteOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteNetworkSiteInput, DeleteNetworkSiteOutput>(DeleteNetworkSiteInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteNetworkSiteInput, DeleteNetworkSiteOutput>())
@@ -865,10 +866,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetDeviceIdentifierInput, GetDeviceIdentifierOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetDeviceIdentifierInput, GetDeviceIdentifierOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetDeviceIdentifierInput, GetDeviceIdentifierOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetDeviceIdentifierInput, GetDeviceIdentifierOutput>(GetDeviceIdentifierInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetDeviceIdentifierInput, GetDeviceIdentifierOutput>())
@@ -933,10 +934,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetNetworkInput, GetNetworkOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetNetworkInput, GetNetworkOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetNetworkInput, GetNetworkOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetNetworkInput, GetNetworkOutput>(GetNetworkInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetNetworkInput, GetNetworkOutput>())
@@ -1001,10 +1002,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetNetworkResourceInput, GetNetworkResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetNetworkResourceInput, GetNetworkResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetNetworkResourceInput, GetNetworkResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetNetworkResourceInput, GetNetworkResourceOutput>(GetNetworkResourceInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetNetworkResourceInput, GetNetworkResourceOutput>())
@@ -1069,10 +1070,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetNetworkSiteInput, GetNetworkSiteOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetNetworkSiteInput, GetNetworkSiteOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetNetworkSiteInput, GetNetworkSiteOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetNetworkSiteInput, GetNetworkSiteOutput>(GetNetworkSiteInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetNetworkSiteInput, GetNetworkSiteOutput>())
@@ -1137,10 +1138,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetOrderInput, GetOrderOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetOrderInput, GetOrderOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetOrderInput, GetOrderOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetOrderInput, GetOrderOutput>(GetOrderInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetOrderInput, GetOrderOutput>())
@@ -1205,10 +1206,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListDeviceIdentifiersInput, ListDeviceIdentifiersOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListDeviceIdentifiersInput, ListDeviceIdentifiersOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListDeviceIdentifiersInput, ListDeviceIdentifiersOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListDeviceIdentifiersInput, ListDeviceIdentifiersOutput>(ListDeviceIdentifiersInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListDeviceIdentifiersInput, ListDeviceIdentifiersOutput>())
@@ -1276,10 +1277,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListNetworkResourcesInput, ListNetworkResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListNetworkResourcesInput, ListNetworkResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListNetworkResourcesInput, ListNetworkResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListNetworkResourcesInput, ListNetworkResourcesOutput>(ListNetworkResourcesInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListNetworkResourcesInput, ListNetworkResourcesOutput>())
@@ -1347,10 +1348,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListNetworkSitesInput, ListNetworkSitesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListNetworkSitesInput, ListNetworkSitesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListNetworkSitesInput, ListNetworkSitesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListNetworkSitesInput, ListNetworkSitesOutput>(ListNetworkSitesInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListNetworkSitesInput, ListNetworkSitesOutput>())
@@ -1418,10 +1419,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListNetworksInput, ListNetworksOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListNetworksInput, ListNetworksOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListNetworksInput, ListNetworksOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListNetworksInput, ListNetworksOutput>(ListNetworksInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListNetworksInput, ListNetworksOutput>())
@@ -1489,10 +1490,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListOrdersInput, ListOrdersOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListOrdersInput, ListOrdersOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListOrdersInput, ListOrdersOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListOrdersInput, ListOrdersOutput>(ListOrdersInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListOrdersInput, ListOrdersOutput>())
@@ -1562,10 +1563,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListTagsForResourceInput, ListTagsForResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListTagsForResourceInput, ListTagsForResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListTagsForResourceInput, ListTagsForResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListTagsForResourceInput, ListTagsForResourceOutput>(ListTagsForResourceInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListTagsForResourceInput, ListTagsForResourceOutput>())
@@ -1628,10 +1629,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<PingInput, PingOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<PingInput, PingOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<PingInput, PingOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<PingInput, PingOutput>(PingInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<PingInput, PingOutput>())
@@ -1705,10 +1706,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<StartNetworkResourceUpdateInput, StartNetworkResourceUpdateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<StartNetworkResourceUpdateInput, StartNetworkResourceUpdateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<StartNetworkResourceUpdateInput, StartNetworkResourceUpdateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<StartNetworkResourceUpdateInput, StartNetworkResourceUpdateOutput>(StartNetworkResourceUpdateInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<StartNetworkResourceUpdateInput, StartNetworkResourceUpdateOutput>())
@@ -1778,10 +1779,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<TagResourceInput, TagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<TagResourceInput, TagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<TagResourceInput, TagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<TagResourceInput, TagResourceOutput>(TagResourceInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<TagResourceInput, TagResourceOutput>())
@@ -1851,10 +1852,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UntagResourceInput, UntagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UntagResourceInput, UntagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UntagResourceInput, UntagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UntagResourceInput, UntagResourceOutput>(UntagResourceInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UntagResourceInput, UntagResourceOutput>())
@@ -1920,10 +1921,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateNetworkSiteInput, UpdateNetworkSiteOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateNetworkSiteInput, UpdateNetworkSiteOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateNetworkSiteInput, UpdateNetworkSiteOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateNetworkSiteInput, UpdateNetworkSiteOutput>(UpdateNetworkSiteInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateNetworkSiteInput, UpdateNetworkSiteOutput>())
@@ -1991,10 +1992,10 @@ extension PrivateNetworksClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateNetworkSitePlanInput, UpdateNetworkSitePlanOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateNetworkSitePlanInput, UpdateNetworkSitePlanOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateNetworkSitePlanInput, UpdateNetworkSitePlanOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateNetworkSitePlanInput, UpdateNetworkSitePlanOutput>(UpdateNetworkSitePlanInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateNetworkSitePlanInput, UpdateNetworkSitePlanOutput>())

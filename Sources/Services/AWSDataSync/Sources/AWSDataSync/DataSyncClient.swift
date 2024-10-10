@@ -33,6 +33,7 @@ import protocol ClientRuntime.DefaultClientConfiguration
 import protocol ClientRuntime.DefaultHttpClientConfiguration
 import protocol ClientRuntime.HttpInterceptorProvider
 import protocol ClientRuntime.IdempotencyTokenGenerator
+import protocol ClientRuntime.Interceptor
 import protocol ClientRuntime.InterceptorProvider
 import protocol ClientRuntime.TelemetryProvider
 import protocol Smithy.LogAgent
@@ -229,10 +230,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<AddStorageSystemInput, AddStorageSystemOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<AddStorageSystemInput, AddStorageSystemOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<AddStorageSystemInput, AddStorageSystemOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.IdempotencyTokenMiddleware<AddStorageSystemInput, AddStorageSystemOutput>(keyPath: \.clientToken))
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<AddStorageSystemInput, AddStorageSystemOutput>(AddStorageSystemInput.urlPathProvider(_:)))
@@ -301,10 +302,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CancelTaskExecutionInput, CancelTaskExecutionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CancelTaskExecutionInput, CancelTaskExecutionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CancelTaskExecutionInput, CancelTaskExecutionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CancelTaskExecutionInput, CancelTaskExecutionOutput>(CancelTaskExecutionInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CancelTaskExecutionInput, CancelTaskExecutionOutput>())
@@ -379,10 +380,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateAgentInput, CreateAgentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateAgentInput, CreateAgentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateAgentInput, CreateAgentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateAgentInput, CreateAgentOutput>(CreateAgentInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateAgentInput, CreateAgentOutput>())
@@ -450,10 +451,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateLocationAzureBlobInput, CreateLocationAzureBlobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationAzureBlobInput, CreateLocationAzureBlobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationAzureBlobInput, CreateLocationAzureBlobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateLocationAzureBlobInput, CreateLocationAzureBlobOutput>(CreateLocationAzureBlobInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateLocationAzureBlobInput, CreateLocationAzureBlobOutput>())
@@ -521,10 +522,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateLocationEfsInput, CreateLocationEfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationEfsInput, CreateLocationEfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationEfsInput, CreateLocationEfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateLocationEfsInput, CreateLocationEfsOutput>(CreateLocationEfsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateLocationEfsInput, CreateLocationEfsOutput>())
@@ -592,10 +593,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateLocationFsxLustreInput, CreateLocationFsxLustreOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationFsxLustreInput, CreateLocationFsxLustreOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationFsxLustreInput, CreateLocationFsxLustreOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateLocationFsxLustreInput, CreateLocationFsxLustreOutput>(CreateLocationFsxLustreInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateLocationFsxLustreInput, CreateLocationFsxLustreOutput>())
@@ -663,10 +664,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateLocationFsxOntapInput, CreateLocationFsxOntapOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationFsxOntapInput, CreateLocationFsxOntapOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationFsxOntapInput, CreateLocationFsxOntapOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateLocationFsxOntapInput, CreateLocationFsxOntapOutput>(CreateLocationFsxOntapInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateLocationFsxOntapInput, CreateLocationFsxOntapOutput>())
@@ -734,10 +735,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateLocationFsxOpenZfsInput, CreateLocationFsxOpenZfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationFsxOpenZfsInput, CreateLocationFsxOpenZfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationFsxOpenZfsInput, CreateLocationFsxOpenZfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateLocationFsxOpenZfsInput, CreateLocationFsxOpenZfsOutput>(CreateLocationFsxOpenZfsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateLocationFsxOpenZfsInput, CreateLocationFsxOpenZfsOutput>())
@@ -805,10 +806,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateLocationFsxWindowsInput, CreateLocationFsxWindowsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationFsxWindowsInput, CreateLocationFsxWindowsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationFsxWindowsInput, CreateLocationFsxWindowsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateLocationFsxWindowsInput, CreateLocationFsxWindowsOutput>(CreateLocationFsxWindowsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateLocationFsxWindowsInput, CreateLocationFsxWindowsOutput>())
@@ -876,10 +877,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateLocationHdfsInput, CreateLocationHdfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationHdfsInput, CreateLocationHdfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationHdfsInput, CreateLocationHdfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateLocationHdfsInput, CreateLocationHdfsOutput>(CreateLocationHdfsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateLocationHdfsInput, CreateLocationHdfsOutput>())
@@ -947,10 +948,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateLocationNfsInput, CreateLocationNfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationNfsInput, CreateLocationNfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationNfsInput, CreateLocationNfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateLocationNfsInput, CreateLocationNfsOutput>(CreateLocationNfsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateLocationNfsInput, CreateLocationNfsOutput>())
@@ -1018,10 +1019,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateLocationObjectStorageInput, CreateLocationObjectStorageOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationObjectStorageInput, CreateLocationObjectStorageOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationObjectStorageInput, CreateLocationObjectStorageOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateLocationObjectStorageInput, CreateLocationObjectStorageOutput>(CreateLocationObjectStorageInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateLocationObjectStorageInput, CreateLocationObjectStorageOutput>())
@@ -1096,10 +1097,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateLocationS3Input, CreateLocationS3Output, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationS3Input, CreateLocationS3Output, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationS3Input, CreateLocationS3Output, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateLocationS3Input, CreateLocationS3Output>(CreateLocationS3Input.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateLocationS3Input, CreateLocationS3Output>())
@@ -1167,10 +1168,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateLocationSmbInput, CreateLocationSmbOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationSmbInput, CreateLocationSmbOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateLocationSmbInput, CreateLocationSmbOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateLocationSmbInput, CreateLocationSmbOutput>(CreateLocationSmbInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateLocationSmbInput, CreateLocationSmbOutput>())
@@ -1238,10 +1239,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateTaskInput, CreateTaskOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateTaskInput, CreateTaskOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateTaskInput, CreateTaskOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateTaskInput, CreateTaskOutput>(CreateTaskInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateTaskInput, CreateTaskOutput>())
@@ -1309,10 +1310,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteAgentInput, DeleteAgentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteAgentInput, DeleteAgentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteAgentInput, DeleteAgentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteAgentInput, DeleteAgentOutput>(DeleteAgentInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteAgentInput, DeleteAgentOutput>())
@@ -1380,10 +1381,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteLocationInput, DeleteLocationOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteLocationInput, DeleteLocationOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteLocationInput, DeleteLocationOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteLocationInput, DeleteLocationOutput>(DeleteLocationInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteLocationInput, DeleteLocationOutput>())
@@ -1451,10 +1452,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteTaskInput, DeleteTaskOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteTaskInput, DeleteTaskOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteTaskInput, DeleteTaskOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteTaskInput, DeleteTaskOutput>(DeleteTaskInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteTaskInput, DeleteTaskOutput>())
@@ -1522,10 +1523,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeAgentInput, DescribeAgentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeAgentInput, DescribeAgentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeAgentInput, DescribeAgentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeAgentInput, DescribeAgentOutput>(DescribeAgentInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeAgentInput, DescribeAgentOutput>())
@@ -1593,10 +1594,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeDiscoveryJobInput, DescribeDiscoveryJobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeDiscoveryJobInput, DescribeDiscoveryJobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeDiscoveryJobInput, DescribeDiscoveryJobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeDiscoveryJobInput, DescribeDiscoveryJobOutput>(DescribeDiscoveryJobInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeDiscoveryJobInput, DescribeDiscoveryJobOutput>(hostPrefix: "discovery-"))
@@ -1664,10 +1665,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeLocationAzureBlobInput, DescribeLocationAzureBlobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationAzureBlobInput, DescribeLocationAzureBlobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationAzureBlobInput, DescribeLocationAzureBlobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeLocationAzureBlobInput, DescribeLocationAzureBlobOutput>(DescribeLocationAzureBlobInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeLocationAzureBlobInput, DescribeLocationAzureBlobOutput>())
@@ -1735,10 +1736,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeLocationEfsInput, DescribeLocationEfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationEfsInput, DescribeLocationEfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationEfsInput, DescribeLocationEfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeLocationEfsInput, DescribeLocationEfsOutput>(DescribeLocationEfsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeLocationEfsInput, DescribeLocationEfsOutput>())
@@ -1806,10 +1807,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeLocationFsxLustreInput, DescribeLocationFsxLustreOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationFsxLustreInput, DescribeLocationFsxLustreOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationFsxLustreInput, DescribeLocationFsxLustreOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeLocationFsxLustreInput, DescribeLocationFsxLustreOutput>(DescribeLocationFsxLustreInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeLocationFsxLustreInput, DescribeLocationFsxLustreOutput>())
@@ -1877,10 +1878,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeLocationFsxOntapInput, DescribeLocationFsxOntapOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationFsxOntapInput, DescribeLocationFsxOntapOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationFsxOntapInput, DescribeLocationFsxOntapOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeLocationFsxOntapInput, DescribeLocationFsxOntapOutput>(DescribeLocationFsxOntapInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeLocationFsxOntapInput, DescribeLocationFsxOntapOutput>())
@@ -1948,10 +1949,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeLocationFsxOpenZfsInput, DescribeLocationFsxOpenZfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationFsxOpenZfsInput, DescribeLocationFsxOpenZfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationFsxOpenZfsInput, DescribeLocationFsxOpenZfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeLocationFsxOpenZfsInput, DescribeLocationFsxOpenZfsOutput>(DescribeLocationFsxOpenZfsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeLocationFsxOpenZfsInput, DescribeLocationFsxOpenZfsOutput>())
@@ -2019,10 +2020,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeLocationFsxWindowsInput, DescribeLocationFsxWindowsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationFsxWindowsInput, DescribeLocationFsxWindowsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationFsxWindowsInput, DescribeLocationFsxWindowsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeLocationFsxWindowsInput, DescribeLocationFsxWindowsOutput>(DescribeLocationFsxWindowsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeLocationFsxWindowsInput, DescribeLocationFsxWindowsOutput>())
@@ -2090,10 +2091,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeLocationHdfsInput, DescribeLocationHdfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationHdfsInput, DescribeLocationHdfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationHdfsInput, DescribeLocationHdfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeLocationHdfsInput, DescribeLocationHdfsOutput>(DescribeLocationHdfsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeLocationHdfsInput, DescribeLocationHdfsOutput>())
@@ -2161,10 +2162,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeLocationNfsInput, DescribeLocationNfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationNfsInput, DescribeLocationNfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationNfsInput, DescribeLocationNfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeLocationNfsInput, DescribeLocationNfsOutput>(DescribeLocationNfsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeLocationNfsInput, DescribeLocationNfsOutput>())
@@ -2232,10 +2233,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeLocationObjectStorageInput, DescribeLocationObjectStorageOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationObjectStorageInput, DescribeLocationObjectStorageOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationObjectStorageInput, DescribeLocationObjectStorageOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeLocationObjectStorageInput, DescribeLocationObjectStorageOutput>(DescribeLocationObjectStorageInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeLocationObjectStorageInput, DescribeLocationObjectStorageOutput>())
@@ -2303,10 +2304,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeLocationS3Input, DescribeLocationS3Output, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationS3Input, DescribeLocationS3Output, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationS3Input, DescribeLocationS3Output, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeLocationS3Input, DescribeLocationS3Output>(DescribeLocationS3Input.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeLocationS3Input, DescribeLocationS3Output>())
@@ -2374,10 +2375,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeLocationSmbInput, DescribeLocationSmbOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationSmbInput, DescribeLocationSmbOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeLocationSmbInput, DescribeLocationSmbOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeLocationSmbInput, DescribeLocationSmbOutput>(DescribeLocationSmbInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeLocationSmbInput, DescribeLocationSmbOutput>())
@@ -2445,10 +2446,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeStorageSystemInput, DescribeStorageSystemOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeStorageSystemInput, DescribeStorageSystemOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeStorageSystemInput, DescribeStorageSystemOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeStorageSystemInput, DescribeStorageSystemOutput>(DescribeStorageSystemInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeStorageSystemInput, DescribeStorageSystemOutput>(hostPrefix: "discovery-"))
@@ -2516,10 +2517,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeStorageSystemResourceMetricsInput, DescribeStorageSystemResourceMetricsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeStorageSystemResourceMetricsInput, DescribeStorageSystemResourceMetricsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeStorageSystemResourceMetricsInput, DescribeStorageSystemResourceMetricsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeStorageSystemResourceMetricsInput, DescribeStorageSystemResourceMetricsOutput>(DescribeStorageSystemResourceMetricsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeStorageSystemResourceMetricsInput, DescribeStorageSystemResourceMetricsOutput>(hostPrefix: "discovery-"))
@@ -2587,10 +2588,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeStorageSystemResourcesInput, DescribeStorageSystemResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeStorageSystemResourcesInput, DescribeStorageSystemResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeStorageSystemResourcesInput, DescribeStorageSystemResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeStorageSystemResourcesInput, DescribeStorageSystemResourcesOutput>(DescribeStorageSystemResourcesInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeStorageSystemResourcesInput, DescribeStorageSystemResourcesOutput>(hostPrefix: "discovery-"))
@@ -2658,10 +2659,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeTaskInput, DescribeTaskOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeTaskInput, DescribeTaskOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeTaskInput, DescribeTaskOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeTaskInput, DescribeTaskOutput>(DescribeTaskInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeTaskInput, DescribeTaskOutput>())
@@ -2729,10 +2730,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DescribeTaskExecutionInput, DescribeTaskExecutionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeTaskExecutionInput, DescribeTaskExecutionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DescribeTaskExecutionInput, DescribeTaskExecutionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DescribeTaskExecutionInput, DescribeTaskExecutionOutput>(DescribeTaskExecutionInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DescribeTaskExecutionInput, DescribeTaskExecutionOutput>())
@@ -2800,10 +2801,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GenerateRecommendationsInput, GenerateRecommendationsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GenerateRecommendationsInput, GenerateRecommendationsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GenerateRecommendationsInput, GenerateRecommendationsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GenerateRecommendationsInput, GenerateRecommendationsOutput>(GenerateRecommendationsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GenerateRecommendationsInput, GenerateRecommendationsOutput>(hostPrefix: "discovery-"))
@@ -2871,10 +2872,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListAgentsInput, ListAgentsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListAgentsInput, ListAgentsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListAgentsInput, ListAgentsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListAgentsInput, ListAgentsOutput>(ListAgentsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListAgentsInput, ListAgentsOutput>())
@@ -2942,10 +2943,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListDiscoveryJobsInput, ListDiscoveryJobsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListDiscoveryJobsInput, ListDiscoveryJobsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListDiscoveryJobsInput, ListDiscoveryJobsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListDiscoveryJobsInput, ListDiscoveryJobsOutput>(ListDiscoveryJobsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListDiscoveryJobsInput, ListDiscoveryJobsOutput>(hostPrefix: "discovery-"))
@@ -3013,10 +3014,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListLocationsInput, ListLocationsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListLocationsInput, ListLocationsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListLocationsInput, ListLocationsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListLocationsInput, ListLocationsOutput>(ListLocationsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListLocationsInput, ListLocationsOutput>())
@@ -3084,10 +3085,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListStorageSystemsInput, ListStorageSystemsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListStorageSystemsInput, ListStorageSystemsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListStorageSystemsInput, ListStorageSystemsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListStorageSystemsInput, ListStorageSystemsOutput>(ListStorageSystemsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListStorageSystemsInput, ListStorageSystemsOutput>(hostPrefix: "discovery-"))
@@ -3155,10 +3156,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListTagsForResourceInput, ListTagsForResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListTagsForResourceInput, ListTagsForResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListTagsForResourceInput, ListTagsForResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListTagsForResourceInput, ListTagsForResourceOutput>(ListTagsForResourceInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListTagsForResourceInput, ListTagsForResourceOutput>())
@@ -3226,10 +3227,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListTaskExecutionsInput, ListTaskExecutionsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListTaskExecutionsInput, ListTaskExecutionsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListTaskExecutionsInput, ListTaskExecutionsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListTaskExecutionsInput, ListTaskExecutionsOutput>(ListTaskExecutionsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListTaskExecutionsInput, ListTaskExecutionsOutput>())
@@ -3297,10 +3298,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListTasksInput, ListTasksOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListTasksInput, ListTasksOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListTasksInput, ListTasksOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListTasksInput, ListTasksOutput>(ListTasksInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListTasksInput, ListTasksOutput>())
@@ -3368,10 +3369,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<RemoveStorageSystemInput, RemoveStorageSystemOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<RemoveStorageSystemInput, RemoveStorageSystemOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<RemoveStorageSystemInput, RemoveStorageSystemOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<RemoveStorageSystemInput, RemoveStorageSystemOutput>(RemoveStorageSystemInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<RemoveStorageSystemInput, RemoveStorageSystemOutput>(hostPrefix: "discovery-"))
@@ -3439,10 +3440,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<StartDiscoveryJobInput, StartDiscoveryJobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<StartDiscoveryJobInput, StartDiscoveryJobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<StartDiscoveryJobInput, StartDiscoveryJobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.IdempotencyTokenMiddleware<StartDiscoveryJobInput, StartDiscoveryJobOutput>(keyPath: \.clientToken))
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<StartDiscoveryJobInput, StartDiscoveryJobOutput>(StartDiscoveryJobInput.urlPathProvider(_:)))
@@ -3511,10 +3512,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<StartTaskExecutionInput, StartTaskExecutionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<StartTaskExecutionInput, StartTaskExecutionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<StartTaskExecutionInput, StartTaskExecutionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<StartTaskExecutionInput, StartTaskExecutionOutput>(StartTaskExecutionInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<StartTaskExecutionInput, StartTaskExecutionOutput>())
@@ -3582,10 +3583,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<StopDiscoveryJobInput, StopDiscoveryJobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<StopDiscoveryJobInput, StopDiscoveryJobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<StopDiscoveryJobInput, StopDiscoveryJobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<StopDiscoveryJobInput, StopDiscoveryJobOutput>(StopDiscoveryJobInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<StopDiscoveryJobInput, StopDiscoveryJobOutput>(hostPrefix: "discovery-"))
@@ -3653,10 +3654,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<TagResourceInput, TagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<TagResourceInput, TagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<TagResourceInput, TagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<TagResourceInput, TagResourceOutput>(TagResourceInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<TagResourceInput, TagResourceOutput>())
@@ -3724,10 +3725,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UntagResourceInput, UntagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UntagResourceInput, UntagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UntagResourceInput, UntagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UntagResourceInput, UntagResourceOutput>(UntagResourceInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UntagResourceInput, UntagResourceOutput>())
@@ -3795,10 +3796,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateAgentInput, UpdateAgentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateAgentInput, UpdateAgentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateAgentInput, UpdateAgentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateAgentInput, UpdateAgentOutput>(UpdateAgentInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateAgentInput, UpdateAgentOutput>())
@@ -3866,10 +3867,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateDiscoveryJobInput, UpdateDiscoveryJobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateDiscoveryJobInput, UpdateDiscoveryJobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateDiscoveryJobInput, UpdateDiscoveryJobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateDiscoveryJobInput, UpdateDiscoveryJobOutput>(UpdateDiscoveryJobInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateDiscoveryJobInput, UpdateDiscoveryJobOutput>(hostPrefix: "discovery-"))
@@ -3937,10 +3938,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateLocationAzureBlobInput, UpdateLocationAzureBlobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateLocationAzureBlobInput, UpdateLocationAzureBlobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateLocationAzureBlobInput, UpdateLocationAzureBlobOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateLocationAzureBlobInput, UpdateLocationAzureBlobOutput>(UpdateLocationAzureBlobInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateLocationAzureBlobInput, UpdateLocationAzureBlobOutput>())
@@ -4008,10 +4009,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateLocationHdfsInput, UpdateLocationHdfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateLocationHdfsInput, UpdateLocationHdfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateLocationHdfsInput, UpdateLocationHdfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateLocationHdfsInput, UpdateLocationHdfsOutput>(UpdateLocationHdfsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateLocationHdfsInput, UpdateLocationHdfsOutput>())
@@ -4079,10 +4080,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateLocationNfsInput, UpdateLocationNfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateLocationNfsInput, UpdateLocationNfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateLocationNfsInput, UpdateLocationNfsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateLocationNfsInput, UpdateLocationNfsOutput>(UpdateLocationNfsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateLocationNfsInput, UpdateLocationNfsOutput>())
@@ -4150,10 +4151,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateLocationObjectStorageInput, UpdateLocationObjectStorageOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateLocationObjectStorageInput, UpdateLocationObjectStorageOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateLocationObjectStorageInput, UpdateLocationObjectStorageOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateLocationObjectStorageInput, UpdateLocationObjectStorageOutput>(UpdateLocationObjectStorageInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateLocationObjectStorageInput, UpdateLocationObjectStorageOutput>())
@@ -4221,10 +4222,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateLocationSmbInput, UpdateLocationSmbOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateLocationSmbInput, UpdateLocationSmbOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateLocationSmbInput, UpdateLocationSmbOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateLocationSmbInput, UpdateLocationSmbOutput>(UpdateLocationSmbInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateLocationSmbInput, UpdateLocationSmbOutput>())
@@ -4292,10 +4293,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateStorageSystemInput, UpdateStorageSystemOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateStorageSystemInput, UpdateStorageSystemOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateStorageSystemInput, UpdateStorageSystemOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateStorageSystemInput, UpdateStorageSystemOutput>(UpdateStorageSystemInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateStorageSystemInput, UpdateStorageSystemOutput>(hostPrefix: "discovery-"))
@@ -4363,10 +4364,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateTaskInput, UpdateTaskOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateTaskInput, UpdateTaskOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateTaskInput, UpdateTaskOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateTaskInput, UpdateTaskOutput>(UpdateTaskInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateTaskInput, UpdateTaskOutput>())
@@ -4434,10 +4435,10 @@ extension DataSyncClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateTaskExecutionInput, UpdateTaskExecutionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateTaskExecutionInput, UpdateTaskExecutionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateTaskExecutionInput, UpdateTaskExecutionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateTaskExecutionInput, UpdateTaskExecutionOutput>(UpdateTaskExecutionInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateTaskExecutionInput, UpdateTaskExecutionOutput>())

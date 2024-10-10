@@ -32,6 +32,7 @@ import protocol ClientRuntime.DefaultClientConfiguration
 import protocol ClientRuntime.DefaultHttpClientConfiguration
 import protocol ClientRuntime.HttpInterceptorProvider
 import protocol ClientRuntime.IdempotencyTokenGenerator
+import protocol ClientRuntime.Interceptor
 import protocol ClientRuntime.InterceptorProvider
 import protocol ClientRuntime.TelemetryProvider
 import protocol Smithy.LogAgent
@@ -232,10 +233,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<AcceptEnvironmentAccountConnectionInput, AcceptEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<AcceptEnvironmentAccountConnectionInput, AcceptEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<AcceptEnvironmentAccountConnectionInput, AcceptEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<AcceptEnvironmentAccountConnectionInput, AcceptEnvironmentAccountConnectionOutput>(AcceptEnvironmentAccountConnectionInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<AcceptEnvironmentAccountConnectionInput, AcceptEnvironmentAccountConnectionOutput>())
@@ -307,10 +308,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CancelComponentDeploymentInput, CancelComponentDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CancelComponentDeploymentInput, CancelComponentDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CancelComponentDeploymentInput, CancelComponentDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CancelComponentDeploymentInput, CancelComponentDeploymentOutput>(CancelComponentDeploymentInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CancelComponentDeploymentInput, CancelComponentDeploymentOutput>())
@@ -388,10 +389,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CancelEnvironmentDeploymentInput, CancelEnvironmentDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CancelEnvironmentDeploymentInput, CancelEnvironmentDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CancelEnvironmentDeploymentInput, CancelEnvironmentDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CancelEnvironmentDeploymentInput, CancelEnvironmentDeploymentOutput>(CancelEnvironmentDeploymentInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CancelEnvironmentDeploymentInput, CancelEnvironmentDeploymentOutput>())
@@ -469,10 +470,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CancelServiceInstanceDeploymentInput, CancelServiceInstanceDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CancelServiceInstanceDeploymentInput, CancelServiceInstanceDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CancelServiceInstanceDeploymentInput, CancelServiceInstanceDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CancelServiceInstanceDeploymentInput, CancelServiceInstanceDeploymentOutput>(CancelServiceInstanceDeploymentInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CancelServiceInstanceDeploymentInput, CancelServiceInstanceDeploymentOutput>())
@@ -550,10 +551,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CancelServicePipelineDeploymentInput, CancelServicePipelineDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CancelServicePipelineDeploymentInput, CancelServicePipelineDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CancelServicePipelineDeploymentInput, CancelServicePipelineDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CancelServicePipelineDeploymentInput, CancelServicePipelineDeploymentOutput>(CancelServicePipelineDeploymentInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CancelServicePipelineDeploymentInput, CancelServicePipelineDeploymentOutput>())
@@ -626,10 +627,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateComponentInput, CreateComponentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateComponentInput, CreateComponentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateComponentInput, CreateComponentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.IdempotencyTokenMiddleware<CreateComponentInput, CreateComponentOutput>(keyPath: \.clientToken))
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateComponentInput, CreateComponentOutput>(CreateComponentInput.urlPathProvider(_:)))
@@ -710,10 +711,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateEnvironmentInput, CreateEnvironmentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateEnvironmentInput, CreateEnvironmentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateEnvironmentInput, CreateEnvironmentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateEnvironmentInput, CreateEnvironmentOutput>(CreateEnvironmentInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateEnvironmentInput, CreateEnvironmentOutput>())
@@ -785,10 +786,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateEnvironmentAccountConnectionInput, CreateEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateEnvironmentAccountConnectionInput, CreateEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateEnvironmentAccountConnectionInput, CreateEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.IdempotencyTokenMiddleware<CreateEnvironmentAccountConnectionInput, CreateEnvironmentAccountConnectionOutput>(keyPath: \.clientToken))
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateEnvironmentAccountConnectionInput, CreateEnvironmentAccountConnectionOutput>(CreateEnvironmentAccountConnectionInput.urlPathProvider(_:)))
@@ -865,10 +866,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateEnvironmentTemplateInput, CreateEnvironmentTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateEnvironmentTemplateInput, CreateEnvironmentTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateEnvironmentTemplateInput, CreateEnvironmentTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateEnvironmentTemplateInput, CreateEnvironmentTemplateOutput>(CreateEnvironmentTemplateInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateEnvironmentTemplateInput, CreateEnvironmentTemplateOutput>())
@@ -941,10 +942,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateEnvironmentTemplateVersionInput, CreateEnvironmentTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateEnvironmentTemplateVersionInput, CreateEnvironmentTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateEnvironmentTemplateVersionInput, CreateEnvironmentTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.IdempotencyTokenMiddleware<CreateEnvironmentTemplateVersionInput, CreateEnvironmentTemplateVersionOutput>(keyPath: \.clientToken))
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateEnvironmentTemplateVersionInput, CreateEnvironmentTemplateVersionOutput>(CreateEnvironmentTemplateVersionInput.urlPathProvider(_:)))
@@ -1017,10 +1018,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateRepositoryInput, CreateRepositoryOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateRepositoryInput, CreateRepositoryOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateRepositoryInput, CreateRepositoryOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateRepositoryInput, CreateRepositoryOutput>(CreateRepositoryInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateRepositoryInput, CreateRepositoryOutput>())
@@ -1093,10 +1094,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateServiceInput, CreateServiceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateServiceInput, CreateServiceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateServiceInput, CreateServiceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateServiceInput, CreateServiceOutput>(CreateServiceInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateServiceInput, CreateServiceOutput>())
@@ -1168,10 +1169,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateServiceInstanceInput, CreateServiceInstanceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateServiceInstanceInput, CreateServiceInstanceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateServiceInstanceInput, CreateServiceInstanceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.IdempotencyTokenMiddleware<CreateServiceInstanceInput, CreateServiceInstanceOutput>(keyPath: \.clientToken))
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateServiceInstanceInput, CreateServiceInstanceOutput>(CreateServiceInstanceInput.urlPathProvider(_:)))
@@ -1244,10 +1245,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateServiceSyncConfigInput, CreateServiceSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateServiceSyncConfigInput, CreateServiceSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateServiceSyncConfigInput, CreateServiceSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateServiceSyncConfigInput, CreateServiceSyncConfigOutput>(CreateServiceSyncConfigInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateServiceSyncConfigInput, CreateServiceSyncConfigOutput>())
@@ -1319,10 +1320,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateServiceTemplateInput, CreateServiceTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateServiceTemplateInput, CreateServiceTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateServiceTemplateInput, CreateServiceTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateServiceTemplateInput, CreateServiceTemplateOutput>(CreateServiceTemplateInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateServiceTemplateInput, CreateServiceTemplateOutput>())
@@ -1395,10 +1396,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateServiceTemplateVersionInput, CreateServiceTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateServiceTemplateVersionInput, CreateServiceTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateServiceTemplateVersionInput, CreateServiceTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.IdempotencyTokenMiddleware<CreateServiceTemplateVersionInput, CreateServiceTemplateVersionOutput>(keyPath: \.clientToken))
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateServiceTemplateVersionInput, CreateServiceTemplateVersionOutput>(CreateServiceTemplateVersionInput.urlPathProvider(_:)))
@@ -1471,10 +1472,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<CreateTemplateSyncConfigInput, CreateTemplateSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateTemplateSyncConfigInput, CreateTemplateSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<CreateTemplateSyncConfigInput, CreateTemplateSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<CreateTemplateSyncConfigInput, CreateTemplateSyncConfigOutput>(CreateTemplateSyncConfigInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<CreateTemplateSyncConfigInput, CreateTemplateSyncConfigOutput>())
@@ -1546,10 +1547,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteComponentInput, DeleteComponentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteComponentInput, DeleteComponentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteComponentInput, DeleteComponentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteComponentInput, DeleteComponentOutput>(DeleteComponentInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteComponentInput, DeleteComponentOutput>())
@@ -1620,10 +1621,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteDeploymentInput, DeleteDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteDeploymentInput, DeleteDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteDeploymentInput, DeleteDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteDeploymentInput, DeleteDeploymentOutput>(DeleteDeploymentInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteDeploymentInput, DeleteDeploymentOutput>())
@@ -1695,10 +1696,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteEnvironmentInput, DeleteEnvironmentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteEnvironmentInput, DeleteEnvironmentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteEnvironmentInput, DeleteEnvironmentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteEnvironmentInput, DeleteEnvironmentOutput>(DeleteEnvironmentInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteEnvironmentInput, DeleteEnvironmentOutput>())
@@ -1770,10 +1771,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteEnvironmentAccountConnectionInput, DeleteEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteEnvironmentAccountConnectionInput, DeleteEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteEnvironmentAccountConnectionInput, DeleteEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteEnvironmentAccountConnectionInput, DeleteEnvironmentAccountConnectionOutput>(DeleteEnvironmentAccountConnectionInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteEnvironmentAccountConnectionInput, DeleteEnvironmentAccountConnectionOutput>())
@@ -1845,10 +1846,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteEnvironmentTemplateInput, DeleteEnvironmentTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteEnvironmentTemplateInput, DeleteEnvironmentTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteEnvironmentTemplateInput, DeleteEnvironmentTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteEnvironmentTemplateInput, DeleteEnvironmentTemplateOutput>(DeleteEnvironmentTemplateInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteEnvironmentTemplateInput, DeleteEnvironmentTemplateOutput>())
@@ -1920,10 +1921,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteEnvironmentTemplateVersionInput, DeleteEnvironmentTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteEnvironmentTemplateVersionInput, DeleteEnvironmentTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteEnvironmentTemplateVersionInput, DeleteEnvironmentTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteEnvironmentTemplateVersionInput, DeleteEnvironmentTemplateVersionOutput>(DeleteEnvironmentTemplateVersionInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteEnvironmentTemplateVersionInput, DeleteEnvironmentTemplateVersionOutput>())
@@ -1995,10 +1996,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteRepositoryInput, DeleteRepositoryOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteRepositoryInput, DeleteRepositoryOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteRepositoryInput, DeleteRepositoryOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteRepositoryInput, DeleteRepositoryOutput>(DeleteRepositoryInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteRepositoryInput, DeleteRepositoryOutput>())
@@ -2070,10 +2071,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteServiceInput, DeleteServiceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteServiceInput, DeleteServiceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteServiceInput, DeleteServiceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteServiceInput, DeleteServiceOutput>(DeleteServiceInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteServiceInput, DeleteServiceOutput>())
@@ -2145,10 +2146,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteServiceSyncConfigInput, DeleteServiceSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteServiceSyncConfigInput, DeleteServiceSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteServiceSyncConfigInput, DeleteServiceSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteServiceSyncConfigInput, DeleteServiceSyncConfigOutput>(DeleteServiceSyncConfigInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteServiceSyncConfigInput, DeleteServiceSyncConfigOutput>())
@@ -2220,10 +2221,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteServiceTemplateInput, DeleteServiceTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteServiceTemplateInput, DeleteServiceTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteServiceTemplateInput, DeleteServiceTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteServiceTemplateInput, DeleteServiceTemplateOutput>(DeleteServiceTemplateInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteServiceTemplateInput, DeleteServiceTemplateOutput>())
@@ -2295,10 +2296,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteServiceTemplateVersionInput, DeleteServiceTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteServiceTemplateVersionInput, DeleteServiceTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteServiceTemplateVersionInput, DeleteServiceTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteServiceTemplateVersionInput, DeleteServiceTemplateVersionOutput>(DeleteServiceTemplateVersionInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteServiceTemplateVersionInput, DeleteServiceTemplateVersionOutput>())
@@ -2370,10 +2371,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<DeleteTemplateSyncConfigInput, DeleteTemplateSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteTemplateSyncConfigInput, DeleteTemplateSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<DeleteTemplateSyncConfigInput, DeleteTemplateSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<DeleteTemplateSyncConfigInput, DeleteTemplateSyncConfigOutput>(DeleteTemplateSyncConfigInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<DeleteTemplateSyncConfigInput, DeleteTemplateSyncConfigOutput>())
@@ -2444,10 +2445,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetAccountSettingsInput, GetAccountSettingsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetAccountSettingsInput, GetAccountSettingsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetAccountSettingsInput, GetAccountSettingsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetAccountSettingsInput, GetAccountSettingsOutput>(GetAccountSettingsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetAccountSettingsInput, GetAccountSettingsOutput>())
@@ -2518,10 +2519,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetComponentInput, GetComponentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetComponentInput, GetComponentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetComponentInput, GetComponentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetComponentInput, GetComponentOutput>(GetComponentInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetComponentInput, GetComponentOutput>())
@@ -2592,10 +2593,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetDeploymentInput, GetDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetDeploymentInput, GetDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetDeploymentInput, GetDeploymentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetDeploymentInput, GetDeploymentOutput>(GetDeploymentInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetDeploymentInput, GetDeploymentOutput>())
@@ -2666,10 +2667,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetEnvironmentInput, GetEnvironmentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetEnvironmentInput, GetEnvironmentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetEnvironmentInput, GetEnvironmentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetEnvironmentInput, GetEnvironmentOutput>(GetEnvironmentInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetEnvironmentInput, GetEnvironmentOutput>())
@@ -2740,10 +2741,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetEnvironmentAccountConnectionInput, GetEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetEnvironmentAccountConnectionInput, GetEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetEnvironmentAccountConnectionInput, GetEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetEnvironmentAccountConnectionInput, GetEnvironmentAccountConnectionOutput>(GetEnvironmentAccountConnectionInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetEnvironmentAccountConnectionInput, GetEnvironmentAccountConnectionOutput>())
@@ -2814,10 +2815,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetEnvironmentTemplateInput, GetEnvironmentTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetEnvironmentTemplateInput, GetEnvironmentTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetEnvironmentTemplateInput, GetEnvironmentTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetEnvironmentTemplateInput, GetEnvironmentTemplateOutput>(GetEnvironmentTemplateInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetEnvironmentTemplateInput, GetEnvironmentTemplateOutput>())
@@ -2888,10 +2889,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetEnvironmentTemplateVersionInput, GetEnvironmentTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetEnvironmentTemplateVersionInput, GetEnvironmentTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetEnvironmentTemplateVersionInput, GetEnvironmentTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetEnvironmentTemplateVersionInput, GetEnvironmentTemplateVersionOutput>(GetEnvironmentTemplateVersionInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetEnvironmentTemplateVersionInput, GetEnvironmentTemplateVersionOutput>())
@@ -2962,10 +2963,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetRepositoryInput, GetRepositoryOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetRepositoryInput, GetRepositoryOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetRepositoryInput, GetRepositoryOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetRepositoryInput, GetRepositoryOutput>(GetRepositoryInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetRepositoryInput, GetRepositoryOutput>())
@@ -3036,10 +3037,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetRepositorySyncStatusInput, GetRepositorySyncStatusOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetRepositorySyncStatusInput, GetRepositorySyncStatusOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetRepositorySyncStatusInput, GetRepositorySyncStatusOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetRepositorySyncStatusInput, GetRepositorySyncStatusOutput>(GetRepositorySyncStatusInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetRepositorySyncStatusInput, GetRepositorySyncStatusOutput>())
@@ -3109,10 +3110,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetResourcesSummaryInput, GetResourcesSummaryOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetResourcesSummaryInput, GetResourcesSummaryOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetResourcesSummaryInput, GetResourcesSummaryOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetResourcesSummaryInput, GetResourcesSummaryOutput>(GetResourcesSummaryInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetResourcesSummaryInput, GetResourcesSummaryOutput>())
@@ -3183,10 +3184,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetServiceInput, GetServiceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetServiceInput, GetServiceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetServiceInput, GetServiceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetServiceInput, GetServiceOutput>(GetServiceInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetServiceInput, GetServiceOutput>())
@@ -3257,10 +3258,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetServiceInstanceInput, GetServiceInstanceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetServiceInstanceInput, GetServiceInstanceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetServiceInstanceInput, GetServiceInstanceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetServiceInstanceInput, GetServiceInstanceOutput>(GetServiceInstanceInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetServiceInstanceInput, GetServiceInstanceOutput>())
@@ -3331,10 +3332,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetServiceInstanceSyncStatusInput, GetServiceInstanceSyncStatusOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetServiceInstanceSyncStatusInput, GetServiceInstanceSyncStatusOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetServiceInstanceSyncStatusInput, GetServiceInstanceSyncStatusOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetServiceInstanceSyncStatusInput, GetServiceInstanceSyncStatusOutput>(GetServiceInstanceSyncStatusInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetServiceInstanceSyncStatusInput, GetServiceInstanceSyncStatusOutput>())
@@ -3405,10 +3406,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetServiceSyncBlockerSummaryInput, GetServiceSyncBlockerSummaryOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetServiceSyncBlockerSummaryInput, GetServiceSyncBlockerSummaryOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetServiceSyncBlockerSummaryInput, GetServiceSyncBlockerSummaryOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetServiceSyncBlockerSummaryInput, GetServiceSyncBlockerSummaryOutput>(GetServiceSyncBlockerSummaryInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetServiceSyncBlockerSummaryInput, GetServiceSyncBlockerSummaryOutput>())
@@ -3479,10 +3480,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetServiceSyncConfigInput, GetServiceSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetServiceSyncConfigInput, GetServiceSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetServiceSyncConfigInput, GetServiceSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetServiceSyncConfigInput, GetServiceSyncConfigOutput>(GetServiceSyncConfigInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetServiceSyncConfigInput, GetServiceSyncConfigOutput>())
@@ -3553,10 +3554,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetServiceTemplateInput, GetServiceTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetServiceTemplateInput, GetServiceTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetServiceTemplateInput, GetServiceTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetServiceTemplateInput, GetServiceTemplateOutput>(GetServiceTemplateInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetServiceTemplateInput, GetServiceTemplateOutput>())
@@ -3627,10 +3628,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetServiceTemplateVersionInput, GetServiceTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetServiceTemplateVersionInput, GetServiceTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetServiceTemplateVersionInput, GetServiceTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetServiceTemplateVersionInput, GetServiceTemplateVersionOutput>(GetServiceTemplateVersionInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetServiceTemplateVersionInput, GetServiceTemplateVersionOutput>())
@@ -3701,10 +3702,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetTemplateSyncConfigInput, GetTemplateSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetTemplateSyncConfigInput, GetTemplateSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetTemplateSyncConfigInput, GetTemplateSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetTemplateSyncConfigInput, GetTemplateSyncConfigOutput>(GetTemplateSyncConfigInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetTemplateSyncConfigInput, GetTemplateSyncConfigOutput>())
@@ -3775,10 +3776,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<GetTemplateSyncStatusInput, GetTemplateSyncStatusOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetTemplateSyncStatusInput, GetTemplateSyncStatusOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<GetTemplateSyncStatusInput, GetTemplateSyncStatusOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<GetTemplateSyncStatusInput, GetTemplateSyncStatusOutput>(GetTemplateSyncStatusInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<GetTemplateSyncStatusInput, GetTemplateSyncStatusOutput>())
@@ -3849,10 +3850,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListComponentOutputsInput, ListComponentOutputsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListComponentOutputsInput, ListComponentOutputsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListComponentOutputsInput, ListComponentOutputsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListComponentOutputsInput, ListComponentOutputsOutput>(ListComponentOutputsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListComponentOutputsInput, ListComponentOutputsOutput>())
@@ -3923,10 +3924,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListComponentProvisionedResourcesInput, ListComponentProvisionedResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListComponentProvisionedResourcesInput, ListComponentProvisionedResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListComponentProvisionedResourcesInput, ListComponentProvisionedResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListComponentProvisionedResourcesInput, ListComponentProvisionedResourcesOutput>(ListComponentProvisionedResourcesInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListComponentProvisionedResourcesInput, ListComponentProvisionedResourcesOutput>())
@@ -3996,10 +3997,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListComponentsInput, ListComponentsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListComponentsInput, ListComponentsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListComponentsInput, ListComponentsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListComponentsInput, ListComponentsOutput>(ListComponentsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListComponentsInput, ListComponentsOutput>())
@@ -4070,10 +4071,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListDeploymentsInput, ListDeploymentsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListDeploymentsInput, ListDeploymentsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListDeploymentsInput, ListDeploymentsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListDeploymentsInput, ListDeploymentsOutput>(ListDeploymentsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListDeploymentsInput, ListDeploymentsOutput>())
@@ -4143,10 +4144,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListEnvironmentAccountConnectionsInput, ListEnvironmentAccountConnectionsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListEnvironmentAccountConnectionsInput, ListEnvironmentAccountConnectionsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListEnvironmentAccountConnectionsInput, ListEnvironmentAccountConnectionsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListEnvironmentAccountConnectionsInput, ListEnvironmentAccountConnectionsOutput>(ListEnvironmentAccountConnectionsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListEnvironmentAccountConnectionsInput, ListEnvironmentAccountConnectionsOutput>())
@@ -4217,10 +4218,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListEnvironmentOutputsInput, ListEnvironmentOutputsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListEnvironmentOutputsInput, ListEnvironmentOutputsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListEnvironmentOutputsInput, ListEnvironmentOutputsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListEnvironmentOutputsInput, ListEnvironmentOutputsOutput>(ListEnvironmentOutputsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListEnvironmentOutputsInput, ListEnvironmentOutputsOutput>())
@@ -4291,10 +4292,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListEnvironmentProvisionedResourcesInput, ListEnvironmentProvisionedResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListEnvironmentProvisionedResourcesInput, ListEnvironmentProvisionedResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListEnvironmentProvisionedResourcesInput, ListEnvironmentProvisionedResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListEnvironmentProvisionedResourcesInput, ListEnvironmentProvisionedResourcesOutput>(ListEnvironmentProvisionedResourcesInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListEnvironmentProvisionedResourcesInput, ListEnvironmentProvisionedResourcesOutput>())
@@ -4365,10 +4366,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListEnvironmentTemplateVersionsInput, ListEnvironmentTemplateVersionsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListEnvironmentTemplateVersionsInput, ListEnvironmentTemplateVersionsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListEnvironmentTemplateVersionsInput, ListEnvironmentTemplateVersionsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListEnvironmentTemplateVersionsInput, ListEnvironmentTemplateVersionsOutput>(ListEnvironmentTemplateVersionsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListEnvironmentTemplateVersionsInput, ListEnvironmentTemplateVersionsOutput>())
@@ -4438,10 +4439,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListEnvironmentTemplatesInput, ListEnvironmentTemplatesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListEnvironmentTemplatesInput, ListEnvironmentTemplatesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListEnvironmentTemplatesInput, ListEnvironmentTemplatesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListEnvironmentTemplatesInput, ListEnvironmentTemplatesOutput>(ListEnvironmentTemplatesInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListEnvironmentTemplatesInput, ListEnvironmentTemplatesOutput>())
@@ -4512,10 +4513,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListEnvironmentsInput, ListEnvironmentsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListEnvironmentsInput, ListEnvironmentsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListEnvironmentsInput, ListEnvironmentsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListEnvironmentsInput, ListEnvironmentsOutput>(ListEnvironmentsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListEnvironmentsInput, ListEnvironmentsOutput>())
@@ -4586,10 +4587,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListRepositoriesInput, ListRepositoriesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListRepositoriesInput, ListRepositoriesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListRepositoriesInput, ListRepositoriesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListRepositoriesInput, ListRepositoriesOutput>(ListRepositoriesInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListRepositoriesInput, ListRepositoriesOutput>())
@@ -4659,10 +4660,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListRepositorySyncDefinitionsInput, ListRepositorySyncDefinitionsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListRepositorySyncDefinitionsInput, ListRepositorySyncDefinitionsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListRepositorySyncDefinitionsInput, ListRepositorySyncDefinitionsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListRepositorySyncDefinitionsInput, ListRepositorySyncDefinitionsOutput>(ListRepositorySyncDefinitionsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListRepositorySyncDefinitionsInput, ListRepositorySyncDefinitionsOutput>())
@@ -4733,10 +4734,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListServiceInstanceOutputsInput, ListServiceInstanceOutputsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListServiceInstanceOutputsInput, ListServiceInstanceOutputsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListServiceInstanceOutputsInput, ListServiceInstanceOutputsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListServiceInstanceOutputsInput, ListServiceInstanceOutputsOutput>(ListServiceInstanceOutputsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListServiceInstanceOutputsInput, ListServiceInstanceOutputsOutput>())
@@ -4807,10 +4808,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListServiceInstanceProvisionedResourcesInput, ListServiceInstanceProvisionedResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListServiceInstanceProvisionedResourcesInput, ListServiceInstanceProvisionedResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListServiceInstanceProvisionedResourcesInput, ListServiceInstanceProvisionedResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListServiceInstanceProvisionedResourcesInput, ListServiceInstanceProvisionedResourcesOutput>(ListServiceInstanceProvisionedResourcesInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListServiceInstanceProvisionedResourcesInput, ListServiceInstanceProvisionedResourcesOutput>())
@@ -4881,10 +4882,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListServiceInstancesInput, ListServiceInstancesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListServiceInstancesInput, ListServiceInstancesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListServiceInstancesInput, ListServiceInstancesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListServiceInstancesInput, ListServiceInstancesOutput>(ListServiceInstancesInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListServiceInstancesInput, ListServiceInstancesOutput>())
@@ -4955,10 +4956,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListServicePipelineOutputsInput, ListServicePipelineOutputsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListServicePipelineOutputsInput, ListServicePipelineOutputsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListServicePipelineOutputsInput, ListServicePipelineOutputsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListServicePipelineOutputsInput, ListServicePipelineOutputsOutput>(ListServicePipelineOutputsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListServicePipelineOutputsInput, ListServicePipelineOutputsOutput>())
@@ -5029,10 +5030,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListServicePipelineProvisionedResourcesInput, ListServicePipelineProvisionedResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListServicePipelineProvisionedResourcesInput, ListServicePipelineProvisionedResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListServicePipelineProvisionedResourcesInput, ListServicePipelineProvisionedResourcesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListServicePipelineProvisionedResourcesInput, ListServicePipelineProvisionedResourcesOutput>(ListServicePipelineProvisionedResourcesInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListServicePipelineProvisionedResourcesInput, ListServicePipelineProvisionedResourcesOutput>())
@@ -5103,10 +5104,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListServiceTemplateVersionsInput, ListServiceTemplateVersionsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListServiceTemplateVersionsInput, ListServiceTemplateVersionsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListServiceTemplateVersionsInput, ListServiceTemplateVersionsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListServiceTemplateVersionsInput, ListServiceTemplateVersionsOutput>(ListServiceTemplateVersionsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListServiceTemplateVersionsInput, ListServiceTemplateVersionsOutput>())
@@ -5176,10 +5177,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListServiceTemplatesInput, ListServiceTemplatesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListServiceTemplatesInput, ListServiceTemplatesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListServiceTemplatesInput, ListServiceTemplatesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListServiceTemplatesInput, ListServiceTemplatesOutput>(ListServiceTemplatesInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListServiceTemplatesInput, ListServiceTemplatesOutput>())
@@ -5249,10 +5250,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListServicesInput, ListServicesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListServicesInput, ListServicesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListServicesInput, ListServicesOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListServicesInput, ListServicesOutput>(ListServicesInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListServicesInput, ListServicesOutput>())
@@ -5323,10 +5324,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<ListTagsForResourceInput, ListTagsForResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListTagsForResourceInput, ListTagsForResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<ListTagsForResourceInput, ListTagsForResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<ListTagsForResourceInput, ListTagsForResourceOutput>(ListTagsForResourceInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<ListTagsForResourceInput, ListTagsForResourceOutput>())
@@ -5399,10 +5400,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<NotifyResourceDeploymentStatusChangeInput, NotifyResourceDeploymentStatusChangeOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<NotifyResourceDeploymentStatusChangeInput, NotifyResourceDeploymentStatusChangeOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<NotifyResourceDeploymentStatusChangeInput, NotifyResourceDeploymentStatusChangeOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<NotifyResourceDeploymentStatusChangeInput, NotifyResourceDeploymentStatusChangeOutput>(NotifyResourceDeploymentStatusChangeInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<NotifyResourceDeploymentStatusChangeInput, NotifyResourceDeploymentStatusChangeOutput>())
@@ -5474,10 +5475,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<RejectEnvironmentAccountConnectionInput, RejectEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<RejectEnvironmentAccountConnectionInput, RejectEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<RejectEnvironmentAccountConnectionInput, RejectEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<RejectEnvironmentAccountConnectionInput, RejectEnvironmentAccountConnectionOutput>(RejectEnvironmentAccountConnectionInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<RejectEnvironmentAccountConnectionInput, RejectEnvironmentAccountConnectionOutput>())
@@ -5549,10 +5550,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<TagResourceInput, TagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<TagResourceInput, TagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<TagResourceInput, TagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<TagResourceInput, TagResourceOutput>(TagResourceInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<TagResourceInput, TagResourceOutput>())
@@ -5624,10 +5625,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UntagResourceInput, UntagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UntagResourceInput, UntagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UntagResourceInput, UntagResourceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UntagResourceInput, UntagResourceOutput>(UntagResourceInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UntagResourceInput, UntagResourceOutput>())
@@ -5698,10 +5699,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateAccountSettingsInput, UpdateAccountSettingsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateAccountSettingsInput, UpdateAccountSettingsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateAccountSettingsInput, UpdateAccountSettingsOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateAccountSettingsInput, UpdateAccountSettingsOutput>(UpdateAccountSettingsInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateAccountSettingsInput, UpdateAccountSettingsOutput>())
@@ -5774,10 +5775,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateComponentInput, UpdateComponentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateComponentInput, UpdateComponentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateComponentInput, UpdateComponentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.IdempotencyTokenMiddleware<UpdateComponentInput, UpdateComponentOutput>(keyPath: \.clientToken))
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateComponentInput, UpdateComponentOutput>(UpdateComponentInput.urlPathProvider(_:)))
@@ -5850,10 +5851,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateEnvironmentInput, UpdateEnvironmentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateEnvironmentInput, UpdateEnvironmentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateEnvironmentInput, UpdateEnvironmentOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateEnvironmentInput, UpdateEnvironmentOutput>(UpdateEnvironmentInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateEnvironmentInput, UpdateEnvironmentOutput>())
@@ -5925,10 +5926,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateEnvironmentAccountConnectionInput, UpdateEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateEnvironmentAccountConnectionInput, UpdateEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateEnvironmentAccountConnectionInput, UpdateEnvironmentAccountConnectionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateEnvironmentAccountConnectionInput, UpdateEnvironmentAccountConnectionOutput>(UpdateEnvironmentAccountConnectionInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateEnvironmentAccountConnectionInput, UpdateEnvironmentAccountConnectionOutput>())
@@ -6000,10 +6001,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateEnvironmentTemplateInput, UpdateEnvironmentTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateEnvironmentTemplateInput, UpdateEnvironmentTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateEnvironmentTemplateInput, UpdateEnvironmentTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateEnvironmentTemplateInput, UpdateEnvironmentTemplateOutput>(UpdateEnvironmentTemplateInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateEnvironmentTemplateInput, UpdateEnvironmentTemplateOutput>())
@@ -6075,10 +6076,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateEnvironmentTemplateVersionInput, UpdateEnvironmentTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateEnvironmentTemplateVersionInput, UpdateEnvironmentTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateEnvironmentTemplateVersionInput, UpdateEnvironmentTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateEnvironmentTemplateVersionInput, UpdateEnvironmentTemplateVersionOutput>(UpdateEnvironmentTemplateVersionInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateEnvironmentTemplateVersionInput, UpdateEnvironmentTemplateVersionOutput>())
@@ -6151,10 +6152,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateServiceInput, UpdateServiceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateServiceInput, UpdateServiceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateServiceInput, UpdateServiceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateServiceInput, UpdateServiceOutput>(UpdateServiceInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateServiceInput, UpdateServiceOutput>())
@@ -6226,10 +6227,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateServiceInstanceInput, UpdateServiceInstanceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateServiceInstanceInput, UpdateServiceInstanceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateServiceInstanceInput, UpdateServiceInstanceOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.IdempotencyTokenMiddleware<UpdateServiceInstanceInput, UpdateServiceInstanceOutput>(keyPath: \.clientToken))
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateServiceInstanceInput, UpdateServiceInstanceOutput>(UpdateServiceInstanceInput.urlPathProvider(_:)))
@@ -6302,10 +6303,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateServicePipelineInput, UpdateServicePipelineOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateServicePipelineInput, UpdateServicePipelineOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateServicePipelineInput, UpdateServicePipelineOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateServicePipelineInput, UpdateServicePipelineOutput>(UpdateServicePipelineInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateServicePipelineInput, UpdateServicePipelineOutput>())
@@ -6377,10 +6378,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateServiceSyncBlockerInput, UpdateServiceSyncBlockerOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateServiceSyncBlockerInput, UpdateServiceSyncBlockerOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateServiceSyncBlockerInput, UpdateServiceSyncBlockerOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateServiceSyncBlockerInput, UpdateServiceSyncBlockerOutput>(UpdateServiceSyncBlockerInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateServiceSyncBlockerInput, UpdateServiceSyncBlockerOutput>())
@@ -6452,10 +6453,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateServiceSyncConfigInput, UpdateServiceSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateServiceSyncConfigInput, UpdateServiceSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateServiceSyncConfigInput, UpdateServiceSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateServiceSyncConfigInput, UpdateServiceSyncConfigOutput>(UpdateServiceSyncConfigInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateServiceSyncConfigInput, UpdateServiceSyncConfigOutput>())
@@ -6527,10 +6528,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateServiceTemplateInput, UpdateServiceTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateServiceTemplateInput, UpdateServiceTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateServiceTemplateInput, UpdateServiceTemplateOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateServiceTemplateInput, UpdateServiceTemplateOutput>(UpdateServiceTemplateInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateServiceTemplateInput, UpdateServiceTemplateOutput>())
@@ -6602,10 +6603,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateServiceTemplateVersionInput, UpdateServiceTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateServiceTemplateVersionInput, UpdateServiceTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateServiceTemplateVersionInput, UpdateServiceTemplateVersionOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateServiceTemplateVersionInput, UpdateServiceTemplateVersionOutput>(UpdateServiceTemplateVersionInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateServiceTemplateVersionInput, UpdateServiceTemplateVersionOutput>())
@@ -6677,10 +6678,10 @@ extension ProtonClient {
                       .build()
         let builder = ClientRuntime.OrchestratorBuilder<UpdateTemplateSyncConfigInput, UpdateTemplateSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>()
         config.interceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateTemplateSyncConfigInput, UpdateTemplateSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         config.httpInterceptorProviders.forEach { provider in
-            builder.interceptors.add(provider.create())
+            builder.interceptors.add(provider.create() as any ClientRuntime.Interceptor<UpdateTemplateSyncConfigInput, UpdateTemplateSyncConfigOutput, SmithyHTTPAPI.HTTPRequest, SmithyHTTPAPI.HTTPResponse>)
         }
         builder.interceptors.add(ClientRuntime.URLPathMiddleware<UpdateTemplateSyncConfigInput, UpdateTemplateSyncConfigOutput>(UpdateTemplateSyncConfigInput.urlPathProvider(_:)))
         builder.interceptors.add(ClientRuntime.URLHostMiddleware<UpdateTemplateSyncConfigInput, UpdateTemplateSyncConfigOutput>())

@@ -12,7 +12,6 @@ import ClientRuntime
 import Smithy
 import SmithyTestUtil
 import XCTest
-import func SmithyTestUtil.dummyIdentityResolver
 
 
 class DeleteObjectTaggingRequestTest: HttpRequestTestBase {
@@ -29,13 +28,10 @@ class DeleteObjectTaggingRequestTest: HttpRequestTestBase {
             resolvedHost: "mybucket.s3.us-west-2.amazonaws.com"
         )
 
-        let config = try await S3Client.Config(
-            awsCredentialIdentityResolver: try SmithyTestUtil.dummyIdentityResolver(),
-            region: "us-west-2",
-            signingRegion: "us-west-2",
-            idempotencyTokenGenerator: ProtocolTestIdempotencyTokenGenerator(),
-            httpClientEngine: ProtocolTestClient()
-        )
+        let config = try await S3Client.S3ClientConfiguration()
+        config.region = "us-west-2"
+        config.httpClientEngine = ProtocolTestClient()
+        config.idempotencyTokenGenerator = ProtocolTestIdempotencyTokenGenerator()
         let client = S3Client(config: config)
 
         let input = DeleteObjectTaggingInput(
@@ -61,13 +57,10 @@ class DeleteObjectTaggingRequestTest: HttpRequestTestBase {
             resolvedHost: "mybucket.s3.us-west-2.amazonaws.com"
         )
 
-        let config = try await S3Client.Config(
-            awsCredentialIdentityResolver: try SmithyTestUtil.dummyIdentityResolver(),
-            region: "us-west-2",
-            signingRegion: "us-west-2",
-            idempotencyTokenGenerator: ProtocolTestIdempotencyTokenGenerator(),
-            httpClientEngine: ProtocolTestClient()
-        )
+        let config = try await S3Client.S3ClientConfiguration()
+        config.region = "us-west-2"
+        config.httpClientEngine = ProtocolTestClient()
+        config.idempotencyTokenGenerator = ProtocolTestIdempotencyTokenGenerator()
         let client = S3Client(config: config)
 
         let input = DeleteObjectTaggingInput(
